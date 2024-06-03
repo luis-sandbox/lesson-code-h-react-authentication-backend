@@ -114,7 +114,11 @@ router.post('/login', (req, res, next) => {
       }
 
     })
-    .catch(err => res.status(500).json({ message: "Internal Server Error" }));
+    .catch(err => {
+      console.log("Error in user login...");
+      console.log(err);
+      res.status(500).json({ message: "Internal Server Error" })
+    });
 });
 
 
